@@ -13,14 +13,68 @@
 
 <body>
 
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        Welcome to the slap game!
+      </div>
+      <div class="col-12 text-center">
+        <button onclick="reset()">Reset Game</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Character status -->
+
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-6 text-center">
+        <h2>Character status</h2>
+        <div>
+          Current enemy: <span id="target-name">Name</span>
+        </div>
+        <div>
+          Health: <span id="health">Health</span>
+        </div>
+        <div>
+          Hit count: <span id="hits">Hits</span>
+        </div>
+        <img src="https://picsum.photos/200" alt="Placehold" id="enemy-portrait">
+      </div>
+
+      <!-- End character status -->
+
+      <!-- Start Attack Menu -->
+      <div class="col-6">
+        <div class="text-center" id="attack-menu">
+          <h2>Actions</h2>
+          <button onclick="slap()">
+            Slap
+          </button>
+
+          <button onclick="punch()">
+            Punch
+          </button>
+
+          <button onclick="kick()">
+            Kick
+          </button>
+        </div>
+        <div class="text-center" id="item-menu">
+          <h2>Items</h2>
+          <button onclick="giveFire()">Give Fire</button>
+          <button onclick="giveShield()">Give Shield</button>
+          <button onclick="giveWonder()">Give Wonder Weapon</button>
+        </div>
+      </div>
+      <!-- End Attack Menu -->
+    </div>
+  </main>
 
 
 
 
-
-
-
-
+  <script src="game.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
