@@ -14,12 +14,11 @@
 <body>
 
   <header class="container-fluid">
-    <div class="row">
+    <div class="row round-border">
       <div class="col-12 text-center">
-        Welcome to the slap game!
+        <h2>Welcome to the Slap Game!</h2>
       </div>
       <div class="col-12 text-center">
-        <button onclick="reset()">Reset Game</button>
       </div>
     </div>
   </header>
@@ -28,8 +27,8 @@
 
   <main class="container-fluid">
     <div class="row">
-      <div class="col-6 text-center">
-        <h2>Character status</h2>
+      <div class="col-6 text-center round-border py-2" id="character-status">
+        <h2 id="character-heading">Character status</h2>
         <div>
           Current enemy: <span id="target-name">Name</span>
         </div>
@@ -45,8 +44,8 @@
       <!-- End character status -->
 
       <!-- Start Attack Menu -->
-      <div class="col-6">
-        <div class="text-center" id="attack-menu">
+      <div class="col-6 round-border py-2" id="attack-menu">
+        <div class="text-center">
           <h2>Actions</h2>
           <button onclick="slap()">
             Slap
@@ -68,6 +67,11 @@
         </div>
       </div>
       <!-- End Attack Menu -->
+    </div>
+    <div class="row">
+      <div class="col-12 text-center pt-2">
+        <button onclick="reset()">Reset Game</button>
+      </div>
     </div>
   </main>
 

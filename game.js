@@ -35,24 +35,33 @@ function reset() {
 
 function slap() {
   let slapDamage = 1 + addMods()
-  target.health -= slapDamage
-  target.hits++
+  if (slapDamage > 0) {
+    target.health -= slapDamage
+    target.hits++
+  }
+  zeroHealth()
   damageBorder()
   update()
 }
 
 function punch() {
   let punchDamage = 5 + addMods()
-  target.health -= punchDamage
-  target.hits++
+  if (punchDamage > 0) {
+    target.health -= punchDamage
+    target.hits++
+  }
+  zeroHealth()
   damageBorder()
   update()
 }
 
 function kick() {
   let kickDamage = 10 + addMods()
-  target.health -= kickDamage
-  target.hits++
+  if (kickDamage > 0) {
+    target.health -= kickDamage
+    target.hits++
+  }
+  zeroHealth()
   damageBorder()
   update()
 }
@@ -85,6 +94,16 @@ function update() {
   document.getElementById("target-name").innerText = `${target.targetName}`
   document.getElementById("hits").innerText = `${target.hits}`
 }
+
+function zeroHealth() {
+  if (target.health < 0) {
+    target.health = 0
+  }
+  if (target.health == 0) {
+    document.getElementById("character-heading").innerText = 'Dead enemy status: Dead'
+  }
+}
+
 
 update()
 
